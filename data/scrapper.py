@@ -13,9 +13,6 @@ for index, row in songs.iterrows():
         song_name = ''.join(c.lower() if c.isalpha() else c if c.isnumeric() else "" for c in row['song'])
         print (f"index - {index}, song name - {song_name} ")
 
-        # songs.at[1, 'lyrics'] = "niqqa"
-
-        
 
         page = urllib2.urlopen(quote_page.format(song_name))
         soup = BeautifulSoup(page, 'html.parser')
